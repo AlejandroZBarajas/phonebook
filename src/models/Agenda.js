@@ -1,32 +1,23 @@
-import { Cola } from "./Cola"
+import { Cola } from "./Cola.js"
 
+export class Agenda {
+    #agenda = Cola
 
-import { Contacto } from './contacto.js';
-
-class Agenda {
   constructor() {
-    this.contactos = new Cola()
+    this.#agenda = new Cola()
   }
 
-  // Método para agregar un contacto a la agenda
-  agregarContacto(nombre, apellidos, numero) {
-    const nuevoContacto = new Contacto();
-    nuevoContacto.setName(nombre);
-    nuevoContacto.setLastName(apellidos);
-    nuevoContacto.setPhoneNumber(numero);
-    this.contactos.enqueue(nuevoContacto);
+  agregarContacto(contacto){
+    this.#agenda.enqueue(contacto)
   }
 
-  // Método para mostrar todos los contactos en la agenda
   mostrarContactos() {
-    let current = this.contactos.front;
+    let current = this.contactos.inicio;
     while (current) {
       const contacto = current.data;
-      console.log(`${contacto.getName()} ${contacto.getLastName()} - ${contacto.getPhoneNumber()}`);
+      console.log(contacto.getName())
       current = current.next;
     }
   }
 }
 
-// Exportar la clase Agenda para que esté disponible en otros archivos
-export { Agenda };

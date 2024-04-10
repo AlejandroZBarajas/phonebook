@@ -1,4 +1,4 @@
-import {Node} from "./Node"
+import {Node} from "./Node.js"
 
 export class Cola{
 
@@ -11,27 +11,28 @@ export class Cola{
     }
     
     enqueue(data) {
-        const newNode = new Node(data);
+        const newNode = new Node(data)
         if (this.isEmpty()) {
-          this.front = newNode;
+          this.#inicio = newNode
         } else {
-          this.#fin.next = newNode;
+          this.#fin.next = newNode
         }
-        this.#fin = newNode;
-        this.#size++;
+        this.#fin = newNode
+        this.#size++
       }
     
     dequeue() {
+        console.log("entra")
         if (this.isEmpty()) {
-          return "Cola vacia";
+          return "Cola vacia"
         }
-        const dequeuedItem = this.front;
-        this.front = this.front.next;
-        if (!this.front) {
-          this.rear = null;
+        const dequeuedItem = this.#inicio
+        this.#inicio = this.#inicio.next
+        if (!this.#inicio) {
+          this.#fin = null
         }
-        this.size--;
-        return dequeuedItem.data;
+        this.#size--
+        return dequeuedItem.getData()
     }
 
     peek(){

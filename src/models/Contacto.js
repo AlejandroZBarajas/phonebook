@@ -1,25 +1,17 @@
 export class Contacto{
-    #Nombre
-    #Apellidos
-    #NumeroTelefonico
+    #nombreCont
+    #numeroTelefonico
 
     setName(name){
-        this.#Nombre=name
+        this.#nombreCont=name
     }
-    getName(){
-        return this.#Nombre
-    }
-    setLastName(apellidos){
-        this.#Apellidos=apellidos
-    }
-    getLastName(){
-        return this.#Apellidos
+    getNameCont(){
+        return this.#nombreCont
     }
     setPhoneNumber(number){
-        this.#NumeroTelefonico=number
+        this.#numeroTelefonico=number
     }
     getPhoneNumber(){
-        return this.#NumeroTelefonico
+        return this.#numeroTelefonico
     }
-
 }
