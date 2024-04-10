@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(43, 45, 45);
+}
+#getContactInfo{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    min-height: 31vh;
+
+    border: solid 2px grey;
+}
+input{
+    position: relative;
+    margin: 25px;
+    width: 50%;
+    left: 20%;
+    display: block;
+}
+button{
+    display: block;
+    position: relative;
+    width: 50%;
+    left: 25%;
+}
