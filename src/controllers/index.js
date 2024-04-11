@@ -18,18 +18,20 @@ function guardarContacto() {
     nuevoContacto.setName(nombre)
     nuevoContacto.setPhoneNumber(numero)
     agenda.enqueue(nuevoContacto)
-    console.log(agenda.peek())
+    displayContactDiv.innerHTML = ""
+    //console.log(agenda.peek())
  
     
 }
 const displayContactDiv=document.getElementById("displayContact")
-displayContactDiv.innerHTML = ""
 
 function mostrarContactos() {
-    while (!agenda.isEmpty()) {
+    while (agenda.getSize()!=0) {
+        console.log("entra al while de impresion")
         let current = agenda.dequeue()
+        console.log("regresa a la impresion despues del dequeue")
 
-        const contacto = ("Nombre: "+current.getNameCont()+"..... Numero Telefonico: "+current.getPhoneNumber())
+        const contacto = ("Nombre: "+current.getNameCont()+"_____ Numero Telefonico: "+current.getPhoneNumber())
         console.log(contacto)
         //let datosCont = contacto.
         const contactoDiv = document.createElement('div')

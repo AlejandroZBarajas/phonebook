@@ -11,27 +11,35 @@ export class Cola{
     }
     
     enqueue(data) {
+      console.log("entra a enqueue")
         const newNode = new Node(data)
         if (this.isEmpty()) {
           this.#inicio = newNode
+          this.#size++
         } else {
-          this.#fin.next = newNode
+          this.#fin = newNode
+
         }
-        this.#fin = newNode
+        this.#fin.setPrevious(data) = newNode
+        //console.log("fin de cola : "+this.#fin)
         this.#size++
+        console.log("size: "+this.#size)
       }
     
     dequeue() {
-        console.log("entra")
+        console.log("entra al dequeue")
         if (this.isEmpty()) {
           return "Cola vacia"
         }
+        console.log(this.#inicio.getData())
         const dequeuedItem = this.#inicio
+        console.log("dequeued item_: "+dequeuedItem)
         this.#inicio = this.#inicio.next
         if (!this.#inicio) {
           this.#fin = null
         }
         this.#size--
+        console.log("sale de dequeue con: "+dequeuedItem.getData())
         return dequeuedItem.getData()
     }
 
